@@ -19,6 +19,7 @@ bool isOwner = false;
 bool isCustomer = false;
 
 class _OnBoardingState extends State<OnBoarding> {
+
   @override
   Widget build(BuildContext context) {
     return CupertinoApp(
@@ -53,7 +54,7 @@ class _OnBoardingState extends State<OnBoarding> {
           const Column(
             mainAxisAlignment: MainAxisAlignment.end,
             children: [
-              Center(child: Text('Description Text 1')),
+              Center(child: Text(' ween app مرحبا ! اكتشف أفضل الخصومات والعروض فقط من',textAlign: TextAlign.center)),
               const SizedBox(
                 height: 120,
               )
@@ -62,7 +63,7 @@ class _OnBoardingState extends State<OnBoarding> {
           const Column(
             mainAxisAlignment: MainAxisAlignment.end,
             children: [
-              Center(child: Text('Description Text 2')),
+              Center(child: Text('استفد من تنوع الخصومات والعروض المقدمة فى جميع المحلات وعلى جميع الخدمات',textAlign: TextAlign.center,)),
               const SizedBox(
                 height: 120,
               )
@@ -71,7 +72,7 @@ class _OnBoardingState extends State<OnBoarding> {
           const Column(
             mainAxisAlignment: MainAxisAlignment.end,
             children: [
-              Center(child: Text('Description Text 3')),
+              Center(child: Text('استمتع بخصومات حصرية تجعل تسوقك أكثر متعة واقتصادا',textAlign: TextAlign.center)),
               const SizedBox(
                 height: 120,
               )
@@ -80,7 +81,7 @@ class _OnBoardingState extends State<OnBoarding> {
           Column(
             mainAxisAlignment: MainAxisAlignment.end,
             children: [
-              Text('Description Text 4'),
+              Text('ابدأ الآن',textAlign: TextAlign.center,),
               SizedBox(
                 height: 20,
               ),
