@@ -2,7 +2,10 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_onboarding_slider/flutter_onboarding_slider.dart';
 import 'package:go_router/go_router.dart';
+import 'package:ionicons/ionicons.dart';
+import 'package:url_launcher/url_launcher.dart';
 import 'package:ween/core/componants/assets.dart';
+import 'package:ween/features/Splash/presentation/view/custom_icon.dart';
 
 import '../../core/componants/buttons/button_card.dart';
 import '../../core/componants/colors.dart';
@@ -18,8 +21,10 @@ class OnBoarding extends StatefulWidget {
 bool isOwner = false;
 bool isCustomer = false;
 
+
 class _OnBoardingState extends State<OnBoarding> {
 
+  final Uri url1 = Uri.parse('https://www.facebook.com/profile.php?id=61551255039332');
   @override
   Widget build(BuildContext context) {
     return CupertinoApp(
@@ -54,8 +59,11 @@ class _OnBoardingState extends State<OnBoarding> {
           const Column(
             mainAxisAlignment: MainAxisAlignment.end,
             children: [
-              Center(child: Text(' ween app مرحبا ! اكتشف أفضل الخصومات والعروض فقط من',textAlign: TextAlign.center)),
-              const SizedBox(
+              Center(
+                  child: Text(
+                      ' ween app مرحبا ! اكتشف أفضل الخصومات والعروض فقط من',
+                      textAlign: TextAlign.center)),
+              SizedBox(
                 height: 120,
               )
             ],
@@ -63,8 +71,12 @@ class _OnBoardingState extends State<OnBoarding> {
           const Column(
             mainAxisAlignment: MainAxisAlignment.end,
             children: [
-              Center(child: Text('استفد من تنوع الخصومات والعروض المقدمة فى جميع المحلات وعلى جميع الخدمات',textAlign: TextAlign.center,)),
-              const SizedBox(
+              Center(
+                  child: Text(
+                'استفد من تنوع الخصومات والعروض المقدمة فى جميع المحلات وعلى جميع الخدمات',
+                textAlign: TextAlign.center,
+              )),
+              SizedBox(
                 height: 120,
               )
             ],
@@ -72,8 +84,11 @@ class _OnBoardingState extends State<OnBoarding> {
           const Column(
             mainAxisAlignment: MainAxisAlignment.end,
             children: [
-              Center(child: Text('استمتع بخصومات حصرية تجعل تسوقك أكثر متعة واقتصادا',textAlign: TextAlign.center)),
-              const SizedBox(
+              Center(
+                  child: Text(
+                      'استمتع بخصومات حصرية تجعل تسوقك أكثر متعة واقتصادا',
+                      textAlign: TextAlign.center)),
+              SizedBox(
                 height: 120,
               )
             ],
@@ -81,10 +96,45 @@ class _OnBoardingState extends State<OnBoarding> {
           Column(
             mainAxisAlignment: MainAxisAlignment.end,
             children: [
-              Text('ابدأ الآن',textAlign: TextAlign.center,),
-              SizedBox(
+              const Text(
+                'ابدأ الآن',
+                textAlign: TextAlign.center,
+              ),
+              const SizedBox(
                 height: 20,
               ),
+              Row(mainAxisAlignment: MainAxisAlignment.center, children: [
+                CustomIcon(
+                  onPressed: () {
+                    launchUrl(url1);
+                  },
+                  icon: const Icon(
+                    Icons.facebook,
+                    color: kPrimary,
+                  ),
+                ),
+                CustomIcon(
+                  onPressed: () {},
+                  icon: const Icon(
+                    Icons.telegram,
+                    color: kPrimary,
+                  ),
+                ),
+                CustomIcon(
+                  onPressed: () {},
+                  icon: const Icon(
+                    Icons.tiktok,
+                    color: kPrimary,
+                  ),
+                ),
+                CustomIcon(
+                  onPressed: () {},
+                  icon: const Icon(
+                    Ionicons.logo_whatsapp,
+                    color: kPrimary,
+                  ),
+                ),
+              ]),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [

@@ -54,18 +54,6 @@ class _LogInPageState extends State<LogInPage> {
                     ),
                      keyboardType: TextInputType.visiblePassword,
                   ),
-                  GestureDetector(
-                    onTap: (){
-                      GoRouter.of(context).push(AppRouter.kPhoneAuthView);
-                    },
-                    child: const Text(
-                        'نسيت الرقم السري ؟',
-                      textAlign: TextAlign.right,
-                      style: TextStyle(
-                        decoration: TextDecoration.underline,
-                      ),
-                    ),
-                  ),
                   CustomButton(
                     title: 'تسجيل الدخول',
                     onPressd: () {

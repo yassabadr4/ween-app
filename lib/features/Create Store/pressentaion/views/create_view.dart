@@ -117,14 +117,14 @@ class _CreateViewState extends State<CreateView> {
                     color: kPrimary,
                   ),
                 ),
-                const CustomTextFromField(
+                const CustomTextFromField1(
                   labelText: 'الايميل',
                   prefixIcon: Icon(
                     Icons.email,
                     color: kPrimary,
                   ),
                 ),
-                const CustomTextFromField(
+                const CustomTextFromField1(
                   keyboardType: TextInputType.url,
                   labelText: 'الفيسبوك',
                   prefixIcon: Icon(
@@ -136,6 +136,13 @@ class _CreateViewState extends State<CreateView> {
                   labelText: 'العنوان',
                   prefixIcon: Icon(
                     Icons.location_on,
+                    color: kPrimary,
+                  ),
+                ),
+                const CustomTextFromField1(
+                  labelText: 'الموقع الجغرافي',
+                  prefixIcon: Icon(
+                    Icons.add_location_alt_outlined,
                     color: kPrimary,
                   ),
                 ),

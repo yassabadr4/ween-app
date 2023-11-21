@@ -54,20 +54,14 @@ class _SignUpPageState extends State<SignUpPage> {
                     ),
                     keyboardType: TextInputType.emailAddress,
                   ),
-                  const CustomTextFromField1(
-                    labelText: 'الموقع الالكتروني',
-                    prefixIcon: Icon(
-                      color: Colors.black,
-                      Icons.http,
-                    ),
-                    keyboardType: TextInputType.emailAddress,
-                  ),
                   const CustomTextFromField(
                     labelText: 'رقم الهاتف',
                     prefixIcon: Icon(
                       color: Colors.black,
                       Ionicons.logo_whatsapp,
+
                     ),
+
                     keyboardType: TextInputType.phone,
                   ),
                   const CustomPassword(
