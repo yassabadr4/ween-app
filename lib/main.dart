@@ -25,8 +25,8 @@ class MyApp extends StatelessWidget {
       create: (context) => PhoneAuthCubit(),
       child: MaterialApp.router(
         theme: ThemeData(fontFamily: 'Cairo'),
-        debugShowCheckedModeBanner: false,
         locale: const Locale('ar'),
+        debugShowCheckedModeBanner: false,
         localizationsDelegates: const [
           S.delegate,
           GlobalMaterialLocalizations.delegate,

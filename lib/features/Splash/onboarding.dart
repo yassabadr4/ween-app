@@ -21,10 +21,19 @@ class OnBoarding extends StatefulWidget {
 bool isOwner = false;
 bool isCustomer = false;
 
-
 class _OnBoardingState extends State<OnBoarding> {
 
-  final Uri url1 = Uri.parse('https://www.facebook.com/profile.php?id=61551255039332');
+  Future<void> _launchUrl(String url) async {
+    final Uri uri = Uri.parse(url,);
+    if (!await launchUrl(
+      uri,
+      mode: LaunchMode.externalApplication,
+    )
+    ) {
+throw 'can not launch url';
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return CupertinoApp(
@@ -73,9 +82,9 @@ class _OnBoardingState extends State<OnBoarding> {
             children: [
               Center(
                   child: Text(
-                'استفد من تنوع الخصومات والعروض المقدمة فى جميع المحلات وعلى جميع الخدمات',
-                textAlign: TextAlign.center,
-              )),
+                    'استفد من تنوع الخصومات والعروض المقدمة فى جميع المحلات وعلى جميع الخدمات',
+                    textAlign: TextAlign.center,
+                  )),
               SizedBox(
                 height: 120,
               )
@@ -106,7 +115,7 @@ class _OnBoardingState extends State<OnBoarding> {
               Row(mainAxisAlignment: MainAxisAlignment.center, children: [
                 CustomIcon(
                   onPressed: () {
-                    launchUrl(url1);
+                    _launchUrl('https://www.facebook.com/profile.php?id=61551255039332');
                   },
                   icon: const Icon(
                     Icons.facebook,
@@ -114,21 +123,27 @@ class _OnBoardingState extends State<OnBoarding> {
                   ),
                 ),
                 CustomIcon(
-                  onPressed: () {},
+                  onPressed: () {
+                    _launchUrl('https://t.me/+MWrMuQOAGAdiODM0');
+                  },
                   icon: const Icon(
                     Icons.telegram,
                     color: kPrimary,
                   ),
                 ),
                 CustomIcon(
-                  onPressed: () {},
+                  onPressed: () {
+                    _launchUrl('https://www.tiktok.com/@weenapp00?_t=8gBuRy35Dle&_r=1');
+                  },
                   icon: const Icon(
                     Icons.tiktok,
                     color: kPrimary,
                   ),
                 ),
                 CustomIcon(
-                  onPressed: () {},
+                  onPressed: () {
+                    _launchUrl('https://wa.me/201064669094 ');
+                  },
                   icon: const Icon(
                     Ionicons.logo_whatsapp,
                     color: kPrimary,
