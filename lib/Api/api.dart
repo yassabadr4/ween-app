@@ -1,14 +1,23 @@
 import 'package:dio/dio.dart';
 
-class ApiServices {
-  final Dio dio;
+class DioHelper {
+  static late Dio dio;
 
-  ApiServices(this.dio);
-  final _baseUrl = '';
-  Future<Map<String, dynamic>> get({required String endPoint})async{
-    var response = await dio.get('$_baseUrl$endPoint');
-    return response.data;
+  static void init() {
+    BaseOptions baseOptions = BaseOptions(
+      baseUrl: "",
+      receiveDataWhenStatusError: true,
+    );
+    dio = Dio(baseOptions);
   }
+
+  Future getData({
+    required String path,
+    Map<String, dynamic>? params,
+  }) async {
+    return await dio.get(path, queryParameters: params);
+  }
+}
 
 
   // static Dio? dio;
@@ -40,4 +49,4 @@ class ApiServices {
   //     queryParameters: query,
   //   );
   // }
-}
+

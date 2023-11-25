@@ -63,9 +63,7 @@ class _DetailsViewState extends State<DetailsView> {
                 ),
                 AspectRatio(
                   aspectRatio: 4 / 4,
-                  child: Expanded(
-                    child: NewOfferListView(images: images),
-                  ),
+                  child: NewOfferListView(images: images),
                 ),
                 const Padding(
                   padding: EdgeInsets.symmetric(horizontal: 8),
@@ -93,25 +91,40 @@ class _DetailsViewState extends State<DetailsView> {
                     ),
                   ),
                 ),
+                const SizedBox(
+                  height: 10,
+                ),
                 CustomContact(
                   icon: Ionicons.logo_whatsapp,
                   title: '01223456789',
                   ontap: () {},
+                ),
+                const SizedBox(
+                  height: 5,
                 ),
                 CustomContact(
                   icon: Icons.email_outlined,
                   title: 'mohamed@gmail.com',
                   ontap: () {},
                 ),
+                const SizedBox(
+                  height: 5,
+                ),
                 CustomContact(
                   icon: Ionicons.logo_facebook,
                   title: 'https://facebook.com',
                   ontap: () {},
                 ),
+                const SizedBox(
+                  height: 5,
+                ),
                 CustomContact(
                   icon: Icons.location_on_outlined,
                   title: 'Cairo,Egypt',
                   ontap: () {},
+                ),
+                const SizedBox(
+                  height: 5,
                 ),
                 CustomContact(
                   icon: Icons.language_outlined,

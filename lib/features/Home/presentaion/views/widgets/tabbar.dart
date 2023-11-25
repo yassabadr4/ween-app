@@ -12,12 +12,12 @@ class Tabbar extends StatefulWidget {
 class _TabbarState extends State<Tabbar> with TickerProviderStateMixin {
   TabController? controller;
   final categories = [
-    'محلات البقالة',
-    'مكتبات',
-    'صيدليات',
-    'محلات الملابس',
-    'مطاعم',
-    'الكافيهات'
+    'مستلزمات المنزل',
+    'الملابس والأحذية',
+    'مستلزمات البناء والديكور',
+    'الورش والحرف اليدوية',
+    'أعمال حرة',
+    'فرى لانسرز'
   ];
   List<Widget> getTabs() {
     List<Widget> tabs = [];

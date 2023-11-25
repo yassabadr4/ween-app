@@ -3,6 +3,7 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:ionicons/ionicons.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 import '../../../../core/componants/buttons/custom_botton.dart';
 import '../../../../core/componants/colors.dart';
@@ -16,6 +17,16 @@ class CreateView extends StatefulWidget {
 }
 
 class _CreateViewState extends State<CreateView> {
+  Future<void> _launchUrl(String url) async {
+    final Uri uri = Uri.parse(url,);
+    if (!await launchUrl(
+      uri,
+      mode: LaunchMode.externalApplication,
+    )
+    ) {
+      throw 'can not launch url';
+    }
+  }
   File? imageFile;
   Widget? checkImage() {
     if (imageFile == null) {
@@ -161,7 +172,9 @@ class _CreateViewState extends State<CreateView> {
                   ),
                 ),
                 GestureDetector(
-                  onTap: () {},
+                  onTap: () {
+                    _launchUrl('https://wa.me/201064669094');
+                  },
                   child: const Padding(
                     padding: EdgeInsets.symmetric(horizontal: 16),
                     child: Text(

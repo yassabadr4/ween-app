@@ -142,7 +142,7 @@ throw 'can not launch url';
                 ),
                 CustomIcon(
                   onPressed: () {
-                    _launchUrl('https://wa.me/201064669094 ');
+                    _launchUrl('https://wa.me/201064669094');
                   },
                   icon: const Icon(
                     Ionicons.logo_whatsapp,
