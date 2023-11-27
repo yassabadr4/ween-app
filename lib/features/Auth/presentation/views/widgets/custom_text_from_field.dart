@@ -7,11 +7,13 @@ class CustomTextFromField extends StatelessWidget {
     required this.prefixIcon,
     this.onChanged,
     this.keyboardType,
+    this.onFieldSubmitted,
   }) : super(key: key);
   final String labelText;
   final Widget prefixIcon;
   final Function(String?)? onChanged;
   final TextInputType? keyboardType;
+ final void Function(String)? onFieldSubmitted;
   @override
   Widget build(BuildContext context) {
     return SizedBox(
@@ -23,6 +25,7 @@ class CustomTextFromField extends StatelessWidget {
               RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
           elevation: 6,
           child: TextFormField(
+            onFieldSubmitted: onFieldSubmitted,
             onChanged: onChanged,
             validator: (value) {
               if (value!.isEmpty) {

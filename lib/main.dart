@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:ween/firebase_options.dart';
 import 'core/function/app_router.dart';
+import 'core/function/check_state.dart';
 import 'generated/l10n.dart';
 
 void main() async {
@@ -10,6 +11,7 @@ void main() async {
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
+  checkStateChanges();
   runApp(const MyApp());
 }
 
