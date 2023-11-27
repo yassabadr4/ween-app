@@ -1,7 +1,6 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
-import 'package:ween/firebase_options.dart';
 import 'core/function/app_router.dart';
 import 'core/function/check_state.dart';
 import 'generated/l10n.dart';
@@ -9,7 +8,7 @@ import 'generated/l10n.dart';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(
-    options: DefaultFirebaseOptions.currentPlatform,
+
   );
   checkStateChanges();
   runApp(const MyApp());

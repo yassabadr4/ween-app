@@ -6,12 +6,30 @@ import 'package:ween/features/Auth/presentation/maneger/cubit/auth_sign_cubit/au
 class AuthSignCubit extends Cubit<AuthSignState> {
   AuthSignCubit() : super(AuthSignInitial());
 
-  String? firstName;
+  String? name;
   String? emailAddress;
   String? phone;
   String? password;
   String? passwordConfirm;
-  signUpWithEmailAndPassword() async {
+
+  Future<void> loginWithEmailAndPassword() async {
+    emit(SignInLoadingState());
+    try {
+       await FirebaseAuth.instance
+          .signInWithEmailAndPassword(email: emailAddress!, password: password!);
+      emit(SignInSuccessState());
+    } on FirebaseAuthException catch (e) {
+      if (e.code == 'user-not-found') {
+        emit(SignInFailureState('user-not-found'));
+      } else if (e.code == 'wrong-password') {
+        emit(SignInFailureState('wrong-password'));
+      }
+    } catch (e) {
+      emit(SignInFailureState(e.toString()));
+    }
+  }
+
+   Future <void> signUpWithEmailAndPassword() async {
     try {
       emit(SignUpLoadingState());
 
@@ -22,9 +40,9 @@ class AuthSignCubit extends Cubit<AuthSignState> {
       emit(SignUpSuccessState());
     } on FirebaseAuthException catch (e) {
       if (e.code == 'weak-password') {
-        emit(SignUpFailureState('The password provided is too weak.'));
+        emit(SignUpFailureState('الرفم السري ضعيف جدا'));
       } else if (e.code == 'email-already-in-use') {
-        emit(SignUpFailureState('The account already exists for that email.'));
+        emit(SignUpFailureState('هذا الايميل تم استخدامه من قبل'));
       }
     } catch (e) {
       print(e.toString());
@@ -32,3 +50,5 @@ class AuthSignCubit extends Cubit<AuthSignState> {
     }
   }
 }
+
+

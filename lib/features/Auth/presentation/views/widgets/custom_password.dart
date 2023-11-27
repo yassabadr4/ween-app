@@ -7,10 +7,12 @@ class CustomPassword extends StatefulWidget {
     this.keyboardType,
     required this.labelText,
     required this.prefixIcon,
+    this.onChanged,
   }) : super(key: key);
   final String labelText;
   final Widget prefixIcon;
   final TextInputType? keyboardType;
+  final void Function(String)? onChanged;
 
   @override
   State<CustomPassword> createState() => _CustomPasswordState();
@@ -18,6 +20,7 @@ class CustomPassword extends StatefulWidget {
 
 class _CustomPasswordState extends State<CustomPassword> {
   bool obscureText = true;
+
 
   @override
   Widget build(BuildContext context) {
@@ -27,9 +30,10 @@ class _CustomPasswordState extends State<CustomPassword> {
         padding: const EdgeInsets.all(8.0),
         child: Card(
           shape:
-              RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
+          RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
           elevation: 6,
           child: TextFormField(
+            onChanged: widget.onChanged,
             validator: (value) {
               if (value!.isEmpty) {
                 return 'field is required';
@@ -46,7 +50,7 @@ class _CustomPasswordState extends State<CustomPassword> {
                 ),
                 onPressed: () {
                   setState(
-                    () {
+                        () {
                       obscureText = !obscureText;
                     },
                   );
